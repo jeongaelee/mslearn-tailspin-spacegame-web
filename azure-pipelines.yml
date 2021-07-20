@@ -15,7 +15,7 @@ stages:
       - npm
     variables:
       wwwrootDir: Tailspin.SpaceGame.Web/wwwroot
-      dotnetSdkVersion: 3.1.300
+      dotnetSdkVersion: 5.0.203
     steps:
     - task: UseDotNet@2
       displayName: Use .NET SDK $(dotnetSdkVersion)
@@ -29,7 +29,8 @@ stages:
       displayName: Compile Sass assets
     - task: gulp@1
       displayName: Run gulp tasks
-    - script: echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt
+    - script: echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.Build
+    mber)" > buildinfo.txt
       displayName: Write build info
       workingDirectory: $(wwwrootDir)
     - task: DotNetCoreCLI@2
