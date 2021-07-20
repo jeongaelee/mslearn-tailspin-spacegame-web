@@ -29,8 +29,7 @@ stages:
       displayName: Compile Sass assets
     - task: gulp@1
       displayName: Run gulp tasks
-    - script: echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.Build
-    mber)" > buildinfo.txt
+    - script: echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt
       displayName: Write build info
       workingDirectory: $(wwwrootDir)
     - task: DotNetCoreCLI@2
